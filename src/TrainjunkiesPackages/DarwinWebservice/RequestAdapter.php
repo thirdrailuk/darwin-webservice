@@ -3,6 +3,7 @@
 namespace TrainjunkiesPackages\DarwinWebservice;
 
 use TrainjunkiesPackages\DarwinWebservice\Soap\ClientContract;
+use TrainjunkiesPackages\DarwinWebservice\Soap\Exception\Delegator;
 
 class RequestAdapter
 {
@@ -18,8 +19,13 @@ class RequestAdapter
 
     public function dispatch($wsdl, $functionName, $arguments = [])
     {
-        return $this->soapClient
-            ->setWSDL($wsdl)
-            ->call($functionName, $arguments);
+        try {
+            return $this->soapClient
+                ->setWSDL($wsdl)
+                ->call($functionName, $arguments);
+        }
+        catch (\SoapFault $e) {
+            Delegator::fromSoapFault($e)->throws();
+        }
     }
 }
