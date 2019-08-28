@@ -61,4 +61,13 @@ class Client
                 'GetReasonCodeList'
             );
     }
+
+    public function getSourceInstanceNames()
+    {
+        return $this->requestAdapter
+            ->dispatch(
+                $this->wsdlSource->referenceWSDL(),
+                'GetSourceInstanceNames'
+            );
+    }
 }

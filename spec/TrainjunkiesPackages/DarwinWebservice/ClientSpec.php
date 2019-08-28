@@ -80,4 +80,18 @@ class ClientSpec extends ObjectBehavior
             'GetReasonCodeList'
         )->shouldHaveBeenCalled();
     }
+
+    function it_has_source_instance_names(
+        RequestAdapter $requestAdapter
+    ) {
+
+        $this->getSourceInstanceNames();
+
+        $requestAdapter->dispatch(
+            self::REFERENCE_WSDL,
+            'GetSourceInstanceNames'
+        )->shouldHaveBeenCalled();
+    }
+
+
 }
