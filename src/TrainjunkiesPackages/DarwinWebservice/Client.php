@@ -32,4 +32,13 @@ class Client
                 'GetTOCList'
             );
     }
+
+    public function getStationList()
+    {
+        return $this->requestAdapter
+            ->dispatch(
+                $this->wsdlSource->referenceWSDL(),
+                'GetStationList'
+            );
+    }
 }

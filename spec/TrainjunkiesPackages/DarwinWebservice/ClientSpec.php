@@ -41,4 +41,18 @@ class ClientSpec extends ObjectBehavior
             'GetTOCList'
         )->shouldHaveBeenCalled();
     }
+
+    function it_has_reference_station_list(
+        RequestAdapter $requestAdapter
+    ) {
+
+        $this->getStationList();
+
+        $requestAdapter->dispatch(
+            self::REFERENCE_WSDL,
+            'GetStationList'
+        )->shouldHaveBeenCalled();
+    }
+
+
 }
