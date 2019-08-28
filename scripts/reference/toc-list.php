@@ -1,11 +1,17 @@
 <?php
 
+use TrainjunkiesPackages\DarwinWebservice\ClientFactory;
+
 require __DIR__ . '/../include.php';
 
-$result = openldbs_client('zend')
-    ->setWSDL(__DIR__ .  '/../../wsdl/reference.wsdl')
-    ->call('GetTOCList', []);
+try {
+    $result = ClientFactory::create(openldbs_token())->getTOCList();
 
-foreach ($result->GetTOCListResult as $toc) {
-    var_dump($toc);
+    foreach ($result->GetTOCListResult as $toc) {
+        var_dump($toc);
+    }
+}
+catch (\Exception $e) {
+    echo $e->getMessage() . PHP_EOL;
+    die(1);
 }
