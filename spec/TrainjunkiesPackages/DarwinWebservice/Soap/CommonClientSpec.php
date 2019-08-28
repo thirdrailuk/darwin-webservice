@@ -34,6 +34,16 @@ class CommonClientSpec extends ObjectBehavior
         $this->getOptions()->shouldBe($options);
     }
 
+    function it_can_set_auth_header()
+    {
+        $token = 'A-FAKE-TOKEN';
+
+        $result = $this->setAuthHeader($token);
+
+        $result->getHeaders()->shouldHaveCount(1);
+        $result->getHeaders()[0]->shouldBeAnInstanceOf(\SoapHeader::class);
+    }
+
     function it_can_interact_with_soap_headers()
     {
         $this->getHeaders()->shouldBe([]);

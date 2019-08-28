@@ -41,6 +41,14 @@ abstract class ClientAbstract
         return $this->options;
     }
 
+    public function setAuthHeader($token)
+    {
+        $this->addHeader(
+            AuthHeaderFactory::create($token)
+        );
+        return $this;
+    }
+
     public function addHeader($header)
     {
         $this->headers[] = $header;
