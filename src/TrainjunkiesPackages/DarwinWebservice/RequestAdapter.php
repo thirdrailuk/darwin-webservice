@@ -23,8 +23,7 @@ class RequestAdapter
             return $this->soapClient
                 ->setWSDL($wsdl)
                 ->call($functionName, $arguments);
-        }
-        catch (\SoapFault $e) {
+        } catch (\SoapFault $e) {
             Delegator::fromSoapFault($e)->throws();
         }
     }

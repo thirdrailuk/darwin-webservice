@@ -18,8 +18,7 @@ class Client
     public function __construct(
         RequestAdapter $requestAdapter,
         Source $wsdlSource
-)
-    {
+    ) {
         $this->requestAdapter = $requestAdapter;
         $this->wsdlSource = $wsdlSource;
     }
