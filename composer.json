@@ -22,7 +22,7 @@
     "scripts": {
         "sniff": "bin/phpcs -s --standard=PSR2 src/",
         "beauty": "bin/phpcbf --standard=PSR2 src/",
-        "spec": "bin/phpspec run --format=pretty --no-code-generation --stop-on-failure",
+        "spec": "bin/phpspec run --format=pretty --no-code-generation --stop-on-failure --ansi",
         "ci": [
             "@sniff",
             "@spec"

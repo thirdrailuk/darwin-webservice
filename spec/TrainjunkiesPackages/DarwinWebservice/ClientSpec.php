@@ -54,5 +54,30 @@ class ClientSpec extends ObjectBehavior
         )->shouldHaveBeenCalled();
     }
 
+    function it_has_reason_code(
+        RequestAdapter $requestAdapter
+    ) {
 
+        $this->getReasonCode(124);
+
+        $requestAdapter->dispatch(
+            self::REFERENCE_WSDL,
+            'GetReasonCode',
+            [
+                'reasonCode' => 124
+            ]
+        )->shouldHaveBeenCalled();
+    }
+
+    function it_has_reason_code_list(
+        RequestAdapter $requestAdapter
+    ) {
+
+        $this->getReasonCodeList();
+
+        $requestAdapter->dispatch(
+            self::REFERENCE_WSDL,
+            'GetReasonCodeList'
+        )->shouldHaveBeenCalled();
+    }
 }

@@ -41,4 +41,25 @@ class Client
                 'GetStationList'
             );
     }
+
+    public function getReasonCode($reasonCode)
+    {
+        return $this->requestAdapter
+            ->dispatch(
+                $this->wsdlSource->referenceWSDL(),
+                'GetReasonCode',
+                [
+                    'reasonCode' => $reasonCode
+                ]
+            );
+    }
+
+    public function getReasonCodeList()
+    {
+        return $this->requestAdapter
+            ->dispatch(
+                $this->wsdlSource->referenceWSDL(),
+                'GetReasonCodeList'
+            );
+    }
 }
