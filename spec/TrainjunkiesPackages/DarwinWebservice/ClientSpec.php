@@ -93,5 +93,32 @@ class ClientSpec extends ObjectBehavior
         )->shouldHaveBeenCalled();
     }
 
+    function it_has_an_arrival_board_with_details(
+        RequestAdapter $requestAdapter
+    ) {
+        $time = new \DateTimeImmutable('now');
+
+        $this->getArrivalBoardWithDetails(
+            $numRows = 10,
+            $crs = 'MAN',
+            $time
+        );
+
+        $requestAdapter->dispatch(
+            self::STAFF_WSDL,
+            'GetArrBoardWithDetails',
+            [
+                'numRows'    => 10,
+                'crs'        => 'MAN',
+                'time'       => $time->format(\DateTimeInterface::ATOM),
+                'filterCrs'  => '',
+                'filterType' => 'to',
+                'timeOffset' => 0,
+                'timeWindow' => 120,
+            ]
+        )->shouldHaveBeenCalled();
+
+    }
+
 
 }
