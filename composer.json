@@ -22,7 +22,7 @@
          "bin-dir": "bin"
     },
     "scripts": {
-        "sniff": "bin/phpcs -s --standard=PSR2 src/",
+        "sniff": "bin/phpcs --colors --cache --standard=PSR2 -p -s -v src/",
         "beauty": "bin/phpcbf --standard=PSR2 src/",
         "static": "bin/phpstan analyse src --level=max --ansi --verbose",
         "spec": "bin/phpspec run --format=pretty --no-code-generation --stop-on-failure --ansi",
