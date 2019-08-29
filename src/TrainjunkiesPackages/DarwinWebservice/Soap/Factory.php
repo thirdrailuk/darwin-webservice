@@ -5,8 +5,8 @@ namespace TrainjunkiesPackages\DarwinWebservice\Soap;
 class Factory
 {
     /**
-     * @param       $token
-     * @param array $soapOptions
+     * @param string    $token
+     * @param array     $soapOptions
      *
      * @return ClientContract
      */
@@ -14,7 +14,8 @@ class Factory
     {
         $soapOptions = array_merge([
             'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
-            'cache_wsdl'  => WSDL_CACHE_MEMORY
+            'cache_wsdl'  => WSDL_CACHE_MEMORY,
+            'trace'       => false
         ], $soapOptions);
 
         return (new CommonClient(null, $soapOptions))

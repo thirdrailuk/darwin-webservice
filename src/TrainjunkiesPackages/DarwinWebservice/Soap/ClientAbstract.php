@@ -4,7 +4,7 @@ namespace TrainjunkiesPackages\DarwinWebservice\Soap;
 
 abstract class ClientAbstract
 {
-    /** @var null|\Zend\Soap\Client */
+    /** @var null|\SoapClient|\Zend\Soap\Client */
     protected $soapClient = null;
     private $wsdl = null;
     private $options = [];
@@ -68,4 +68,6 @@ abstract class ClientAbstract
 
         return $this->soapClient;
     }
+
+    abstract protected function initSoapClient();
 }

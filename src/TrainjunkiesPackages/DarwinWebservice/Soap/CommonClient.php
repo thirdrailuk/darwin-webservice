@@ -4,6 +4,9 @@ namespace TrainjunkiesPackages\DarwinWebservice\Soap;
 
 class CommonClient extends ClientAbstract implements ClientContract
 {
+    /**
+     * @throws \SoapFault
+     */
     protected function initSoapClient()
     {
         $this->soapClient = new \SoapClient(

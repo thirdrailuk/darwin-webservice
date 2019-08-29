@@ -4,6 +4,11 @@ namespace TrainjunkiesPackages\DarwinWebservice\Soap\Wsdl;
 
 class Source
 {
+    /**
+     * @var bool|string|null
+     */
+    private $baseDirectory;
+
     public function __construct($baseDirectory = null)
     {
         $this->baseDirectory = ($baseDirectory)

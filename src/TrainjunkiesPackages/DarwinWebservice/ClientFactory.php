@@ -8,8 +8,8 @@ use TrainjunkiesPackages\DarwinWebservice\Soap\Wsdl\Source;
 class ClientFactory
 {
     /**
-     * @param       $token
-     * @param array $soapOptions
+     * @param string    $token
+     * @param array     $soapOptions
      *
      * @return Client
      */

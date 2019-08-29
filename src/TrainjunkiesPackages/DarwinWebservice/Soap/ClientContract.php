@@ -5,7 +5,7 @@ namespace TrainjunkiesPackages\DarwinWebservice\Soap;
 interface ClientContract
 {
     /**
-     * @param $wsdl
+     * @param string    $wsdl
      *
      * @return $this
      */
@@ -14,7 +14,7 @@ interface ClientContract
     public function getWSDL();
 
     /**
-     * @param $options
+     * @param array     $options
      *
      * @return $this
      */
@@ -23,14 +23,14 @@ interface ClientContract
     public function getOptions();
 
     /**
-     * @param $token
+     * @param string    $token
      *
      * @return $this
      */
     public function setAuthHeader($token);
 
     /**
-     * @param $header
+     * @param \SoapHeader   $header
      *
      * @return $this
      */
