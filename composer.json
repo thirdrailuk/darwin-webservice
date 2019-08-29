@@ -10,6 +10,7 @@
     "require-dev": {
         "phpspec/phpspec": "^3.4",
         "squizlabs/php_codesniffer": "^3.4",
+        "phpunit/phpunit": "^8.3",
         "phpstan/phpstan": "^0.11.15"
     },
     "autoload": {
@@ -25,10 +26,12 @@
         "beauty": "bin/phpcbf --standard=PSR2 src/",
         "static": "bin/phpstan analyse src --level=max --ansi --verbose",
         "spec": "bin/phpspec run --format=pretty --no-code-generation --stop-on-failure --ansi",
+        "integration": "bin/phpunit",
         "ci": [
             "@sniff",
             "@static",
-            "@spec"
+            "@spec",
+            "@integration"
         ]
     }
 }
