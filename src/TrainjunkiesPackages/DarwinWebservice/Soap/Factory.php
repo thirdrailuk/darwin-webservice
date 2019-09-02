@@ -15,7 +15,8 @@ class Factory
         $soapOptions = array_merge([
             'cache_wsdl'  => WSDL_CACHE_MEMORY,
             'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
-            'trace'       => false
+            'trace'       => false,
+            'classmap'    => (new Classmap())->mappings()
         ], $soapOptions);
 
         return (new CommonClient(null, $soapOptions))
