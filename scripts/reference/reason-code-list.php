@@ -7,9 +7,7 @@ require __DIR__ . '/../include.php';
 try {
     $result = ClientFactory::create(openldbs_token())->getReasonCodeList();
 
-    foreach ($result->GetReasonCodeListResult->reason as $reason) {
-        var_dump($reason);
-    }
+    var_dump($result->reasonCodes()->toArray());
 }
 catch (\Exception $e) {
     echo $e->getMessage() . PHP_EOL;

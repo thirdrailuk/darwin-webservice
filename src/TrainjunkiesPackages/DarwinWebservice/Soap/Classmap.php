@@ -3,6 +3,7 @@
 namespace TrainjunkiesPackages\DarwinWebservice\Soap;
 
 use TrainjunkiesPackages\DarwinWebservice\Soap\Response\ReasonCode;
+use TrainjunkiesPackages\DarwinWebservice\Soap\Response\ReasonCodeList;
 
 class Classmap
 {
@@ -23,7 +24,8 @@ class Classmap
     public function mappings()
     {
         return [
-            'GetReasonCodeResponseType' => ReasonCode::class
+            'GetReasonCodeResponseType'     => ReasonCode::class,
+            'GetReasonCodeListResponseType' => ReasonCodeList::class
         ];
     }
 }

@@ -6,6 +6,7 @@ use TrainjunkiesPackages\DarwinWebservice\Soap\Classmap;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use TrainjunkiesPackages\DarwinWebservice\Soap\Response\ReasonCode;
+use TrainjunkiesPackages\DarwinWebservice\Soap\Response\ReasonCodeList;
 
 class ClassmapSpec extends ObjectBehavior
 {
@@ -29,7 +30,8 @@ class ClassmapSpec extends ObjectBehavior
     private function expectedMappings($key = null)
     {
         $mappings = [
-            'GetReasonCodeResponseType' => ReasonCode::class
+            'GetReasonCodeResponseType'     => ReasonCode::class,
+            'GetReasonCodeListResponseType' => ReasonCodeList::class
         ];
 
         if($key !== null) {

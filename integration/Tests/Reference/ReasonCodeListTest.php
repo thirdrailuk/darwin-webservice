@@ -3,6 +3,7 @@
 namespace Tests\Reference;
 
 use PHPUnit\Framework\TestCase;
+use TrainjunkiesPackages\DarwinWebservice\Collection;
 
 class ReasonCodeListTest extends TestCase
 {
@@ -10,17 +11,6 @@ class ReasonCodeListTest extends TestCase
     {
         $reasonCodeList = clientFactory()->getReasonCodeList();
 
-        $this->assertObjectHasAttribute('GetReasonCodeListResult', $reasonCodeList);
-        $this->assertObjectHasAttribute('reason', $reasonCodeList->GetReasonCodeListResult);
-
-        $reasonCodes = $reasonCodeList->GetReasonCodeListResult->reason;
-
-        $this->assertGreaterThan(0, count($reasonCodes));
-
-        foreach ($reasonCodes as $reasonCode) {
-            $this->assertObjectHasAttribute('code', $reasonCode);
-            $this->assertObjectHasAttribute('lateReason', $reasonCode);
-            $this->assertObjectHasAttribute('cancReason', $reasonCode);
-        }
+        $this->assertInstanceOf(Collection::class, $reasonCodeList->reasonCodes());
     }
 }
