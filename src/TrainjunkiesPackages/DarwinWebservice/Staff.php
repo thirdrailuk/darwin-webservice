@@ -2,6 +2,14 @@
 
 namespace TrainjunkiesPackages\DarwinWebservice;
 
+use TrainjunkiesPackages\DarwinWebservice\Soap\Classmap;
+use TrainjunkiesPackages\DarwinWebservice\Soap\Wsdl\Source;
+
+/**
+ * @property Source             $wsdlSource
+ * @property RequestAdapter     $requestAdapter
+ * @property Classmap           $classmap
+ */
 trait Staff
 {
     public function getArrivalBoardWithDetails(
