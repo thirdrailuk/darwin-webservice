@@ -61,4 +61,15 @@ trait Staff
                 ]
             );
     }
+
+    public function queryServiceByRid($rid)
+    {
+        return $this->requestAdapter->dispatch(
+            $this->wsdlSource->staffWSDL(),
+            'GetServiceDetailsByRID',
+            [
+                'rid' => $rid
+            ]
+        );
+    }
 }

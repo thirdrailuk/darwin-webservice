@@ -5,6 +5,8 @@ namespace TrainjunkiesPackages\DarwinWebservice\Soap;
 use TrainjunkiesPackages\DarwinWebservice\Soap\Response\ReasonCode;
 use TrainjunkiesPackages\DarwinWebservice\Soap\Response\ReasonCodeList;
 use TrainjunkiesPackages\DarwinWebservice\Soap\Response\GetBoardWithDetailsResult;
+use TrainjunkiesPackages\DarwinWebservice\Soap\Response\ServiceDetails;
+use TrainjunkiesPackages\DarwinWebservice\Soap\Response\TrainService;
 
 class Classmap
 {
@@ -27,7 +29,8 @@ class Classmap
         return [
             'GetReasonCodeResponseType'              => ReasonCode::class,
             'GetReasonCodeListResponseType'          => ReasonCodeList::class,
-            'GetStationBoardWithDetailsResponseType' => GetBoardWithDetailsResult::class
+            'GetStationBoardWithDetailsResponseType' => GetBoardWithDetailsResult::class,
+            'GetServiceDetailsResponseType'          => ServiceDetails::class
         ];
     }
 }

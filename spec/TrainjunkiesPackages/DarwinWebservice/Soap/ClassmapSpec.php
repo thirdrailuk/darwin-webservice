@@ -8,6 +8,7 @@ use Prophecy\Argument;
 use TrainjunkiesPackages\DarwinWebservice\Soap\Response\GetBoardWithDetailsResult;
 use TrainjunkiesPackages\DarwinWebservice\Soap\Response\ReasonCode;
 use TrainjunkiesPackages\DarwinWebservice\Soap\Response\ReasonCodeList;
+use TrainjunkiesPackages\DarwinWebservice\Soap\Response\ServiceDetails;
 
 class ClassmapSpec extends ObjectBehavior
 {
@@ -33,7 +34,8 @@ class ClassmapSpec extends ObjectBehavior
         $mappings = [
             'GetReasonCodeResponseType'              => ReasonCode::class,
             'GetReasonCodeListResponseType'          => ReasonCodeList::class,
-            'GetStationBoardWithDetailsResponseType' => GetBoardWithDetailsResult::class
+            'GetStationBoardWithDetailsResponseType' => GetBoardWithDetailsResult::class,
+            'GetServiceDetailsResponseType'          => ServiceDetails::class
         ];
 
         if($key !== null) {

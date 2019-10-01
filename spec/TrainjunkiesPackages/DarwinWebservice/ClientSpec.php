@@ -119,7 +119,7 @@ class ClientSpec extends ObjectBehavior
         )->shouldHaveBeenCalled();
     }
 
-        function it_has_an_departure_board_with_details(
+    function it_has_an_departure_board_with_details(
         RequestAdapter $requestAdapter
     ) {
         $time = new \DateTimeImmutable('now');
@@ -142,6 +142,19 @@ class ClientSpec extends ObjectBehavior
                 'timeOffset' => 0,
                 'timeWindow' => 120,
             ]
+        )->shouldHaveBeenCalled();
+    }
+
+    function it_can_query_service_by_rid(
+        RequestAdapter $requestAdapter
+    )
+    {
+        $this->queryServiceByRid('12345');
+
+        $requestAdapter->dispatch(
+            self::STAFF_WSDL,
+            'GetServiceDetailsByRID',
+            ['rid' => '12345']
         )->shouldHaveBeenCalled();
     }
 }
