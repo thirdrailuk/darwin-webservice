@@ -1,5 +1,7 @@
 # Trainjunkies - Darwin Webservice
 
+[![Build Status](https://travis-ci.com/trainjunkies-packages/darwin-webservice.svg?token=qpN7iTqP24DsNCTUJaiY&branch=master)](https://travis-ci.com/trainjunkies-packages/darwin-webservice)
+
 PHP package to consume National Rail OpenLDBSV Web Service
 
 ## Installation
