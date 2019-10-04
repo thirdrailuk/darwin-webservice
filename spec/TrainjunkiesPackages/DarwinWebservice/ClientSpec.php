@@ -110,7 +110,7 @@ class ClientSpec extends ObjectBehavior
             [
                 'numRows'    => 10,
                 'crs'        => 'MAN',
-                'time'       => $time->format(\DateTimeInterface::ATOM),
+                'time'       => $time->format(\DateTime::ATOM),
                 'filterCrs'  => '',
                 'filterType' => 'to',
                 'timeOffset' => 0,
@@ -136,7 +136,7 @@ class ClientSpec extends ObjectBehavior
             [
                 'numRows'    => 10,
                 'crs'        => 'MAN',
-                'time'       => $time->format(\DateTimeInterface::ATOM),
+                'time'       => $time->format(\DateTime::ATOM),
                 'filterCrs'  => '',
                 'filterType' => 'to',
                 'timeOffset' => 0,
